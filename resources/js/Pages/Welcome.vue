@@ -240,18 +240,12 @@
                     <br />
                     <span class="text-sm">by {{ category.owner_id }}</span>
                   </h2>
-                  <p class="text-gray-700">
-
-
-                    <ul style="list-style: square inside url('image/menu_list.png')">
-                        <!-- <li v-for="subcategory in category.n_level_subcategories" :key="subcategory">{{subcategory.name}}</li> -->
-                        <li v-if="category.n_level_subcategories">
-                            <CategoryPartial :title="category.n_level_subcategories"/>
-                        </li>
-                        <!-- <li>asfasf</li>
-                        <li>asfasf</li> -->
-                    </ul>
-                  </p>
+                  <div>
+                    <CategoryPartial
+                      :treeData="subcategory.nLevelSubcategories"
+                    ></CategoryPartial>
+                  </div>
+                  <p class="text-gray-700"></p>
                 </div>
               </div>
             </div>
@@ -274,7 +268,6 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 // import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import CategoryPartial from "@/Components/CategoryPartial";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import CategoryPartial from "@/Components/CategoryPartial.vue";
 export default {
   components: {
     CategoryPartial,

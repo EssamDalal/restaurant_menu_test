@@ -1,11 +1,27 @@
 <template>
-  <li v-for="subcategory in title" :key="subcategory">
-    {{ subcategory.name }}
-  </li>
+  <div class="tree">
+    <ul class="tree-list">
+      <node-tree :node="treeData"></node-tree>
+    </ul>
+  </div>
 </template>
 
 <script>
+import NodeTree from "@/Components/NodeTree";
+
 export default {
-  setup() {},
+  props: {
+    treeData: Object,
+  },
+  components: {
+    NodeTree,
+  },
 };
 </script>
+
+<style>
+.tree-list ul {
+  padding-left: 16px;
+  margin: 6px 0;
+}
+</style>
