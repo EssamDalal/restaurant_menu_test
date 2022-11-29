@@ -13,8 +13,12 @@
 </template>
 
 <script>
+import Node from "@/Components/NodeTree";
 export default {
   name: "node",
+  components: {
+    Node,
+  },
   props: {
     node: Object,
   },

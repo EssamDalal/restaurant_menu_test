@@ -1,7 +1,7 @@
 <template>
   <div class="tree">
     <ul class="tree-list">
-      <node-tree :node="treeData"></node-tree>
+      <node-tree :node="tree"></node-tree>
     </ul>
   </div>
 </template>
@@ -11,7 +11,7 @@ import NodeTree from "@/Components/NodeTree";
 
 export default {
   props: {
-    treeData: Object,
+    tree: Object,
   },
   components: {
     NodeTree,

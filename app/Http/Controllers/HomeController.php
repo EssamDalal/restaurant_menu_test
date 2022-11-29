@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = HomeResource::collection(Category::whereNull('parent_id')->with(['nLevelSubcategories', 'items'])->get());
+        // $categories = HomeResource::collection(Category::whereNull('parent_id')->with(['nLevelSubcategories', 'items'])->get());
         $categories = Category::whereNull('parent_id')->with(['nLevelSubcategories', 'items'])->get();
         // dd($categories);
         return Inertia::render('Welcome', [

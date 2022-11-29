@@ -241,9 +241,7 @@
                     <span class="text-sm">by {{ category.owner_id }}</span>
                   </h2>
                   <div>
-                    <CategoryPartial
-                      :treeData="subcategory.nLevelSubcategories"
-                    ></CategoryPartial>
+                    <Tree :tree="category"></Tree>
                   </div>
                   <p class="text-gray-700"></p>
                 </div>
@@ -265,12 +263,11 @@
 <script >
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-import CategoryPartial from "@/Components/CategoryPartial";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import Tree from "@/Components/Tree";
 export default {
   components: {
-    CategoryPartial,
+    Tree,
   },
   props: {
     categories: {
