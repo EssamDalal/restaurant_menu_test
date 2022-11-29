@@ -264,7 +264,7 @@
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import Tree from "@/Components/Tree";
+import Tree from "@/Components/Tree.vue";
 export default {
   components: {
     Tree,
