@@ -21,7 +21,7 @@ class CategoryFactory extends Factory
             'have_discount' => $this->faker->boolean(),
             'discount' => $this->faker->numberBetween(1, 10),
             'owner_id' => 1,
-            'parent_id' =>  $this->faker->numberBetween(1, 10),
+            'parent_id' =>  $this->faker->numberBetween(1, 5),
         ];
     }
 }

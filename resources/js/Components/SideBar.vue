@@ -380,9 +380,9 @@ export default {
     };
   },
   methods: {
-    // logout() {
-    //   this.$inertia.post(route("logout"));
-    // },
+    logout() {
+      this.$inertia.post(route("logout"));
+    },
   },
 };
 </script>

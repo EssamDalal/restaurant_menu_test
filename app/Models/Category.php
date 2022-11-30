@@ -29,17 +29,32 @@ class Category extends Model
     }
     public function nLevelSubcategories()
     {
-        return $this->hasMany(self::class, 'parent_id')->with('nLevelSubcategories');
+        return $this->hasMany(self::class, 'parent_id')->with('nLevelSubcategories', 'items');
     }
-    // public function getAllCatefory()
-    // {
-    //     if (count($this->nLevelSubcategories) != 0) {
-    //         $allCat = $this->nLevelSubcategories;
-    //         return $allCat;
-    //     } else {
-    //         return $this->getAllCatefory();
-    //     }
-    // }
+    public function nameOwner()
+    {
+        return $this->user()->name;
+    }
+    public function getDiscountAttribute($value)
+    {
+        if ($value != 0) {
+            return $value;
+        } else {
+            if ($this->parent == null) {
+                return 0;
+            } else {
+                return $this->parent->discount;
+            }
+        }
+    }
+    public function getItems()
+    {
+        if ($this->parent->items) {
+            return $this->parent->item;
+        } else {
+            return 0;
+        }
+    }
 
     protected function canHaveChildren(): Attribute
     {

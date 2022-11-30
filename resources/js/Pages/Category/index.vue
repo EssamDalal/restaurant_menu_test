@@ -62,7 +62,6 @@
             <th scope="col" class="px-6 py-3">Category name</th>
             <th scope="col" class="px-6 py-3">Category type</th>
             <th scope="col" class="px-6 py-3">Discount</th>
-            <th scope="col" class="px-6 py-3">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -99,7 +98,6 @@
               No Discount
             </td>
             <td class="px-6 py-4" v-else>{{ category.discount }}%</td>
-            <td class="px-6 py-4">asfsaf</td>
           </tr>
         </tbody>
       </table>

@@ -18,13 +18,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $categories = Category::whereNull('parent_id')->with(['user', 'nLevelSubcategories', 'items'])->get()->append('discount');
+        // $username = $categories->user();
         // $categories = HomeResource::collection(Category::whereNull('parent_id')->with(['nLevelSubcategories', 'items'])->get());
-        $categories = Category::whereNull('parent_id')->with(['nLevelSubcategories', 'items'])->get();
         // dd($categories);
         return Inertia::render('Welcome', [
             'categories' => $categories,
-            // 'canLogin' => Route::has('login'),
-            // 'canRegister' => Route::has('register'),
+            // 'username' => $username,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
         ]);
     }
 
